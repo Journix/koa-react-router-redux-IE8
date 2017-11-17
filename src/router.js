@@ -1,14 +1,13 @@
 import Router from 'koa-router';
 import fs from 'fs';
 import slbHealthCheckCtrl from './ctrls/slbHealthCheck'
-import domestic from './ctrls/domestic'
-const {syncConfig} = require('../config')
+import index from './ctrls/index'
 
-const prefix = syncConfig.vd ? {prefix: syncConfig.vd} : {}
+const prefix = {}
 const router = new Router(prefix);
 
 router.get('/slbhealthcheck.html', slbHealthCheckCtrl);
-router.get('/:param', domestic)  //new RegExp(syncConfig.vd+'\/\S{3}-\S{3}.+')
+router.get('/:param', index)
 
 //处理路由参数，自动加载或者校验
 router.param('serviceName', async function (param, ctx, next) {
@@ -34,7 +33,7 @@ router.param('serviceName', async function (param, ctx, next) {
         })
     })
 
-router.use('/domestic', domestic)
+// router.use('/index', index)
 
 
 export default router
