@@ -10,12 +10,8 @@ import koaMount from 'koa-mount';
 import router from './router';
 import finalhttp from './middlewares/finalhttp';
 
-
-
-import {syncConfig} from '../config';
-
 const app = new Koa();
-const mount = (middleware) => koaMount(syncConfig.vd || '/', middleware)
+const mount = (middleware) => koaMount('/', middleware)
 
 app.use(koaBody());
 app.use(finalhttp());
@@ -25,7 +21,7 @@ app.use(views(path.join(`${__dirname}`, '..', '/views'), {
     default: "dot"
   }));
 
-app.use(convert(session(syncConfig.session, app)));
+app.use(convert(session(app)));
 
 //直接通过***.html访问的页面
 app.use(mount(serve(path.join(`${__dirname}`, '..', '/static/dist'),  {gzip: true, autogz: true})));
@@ -34,4 +30,5 @@ app
 .use(router.routes())
 .use(router.allowedMethods());
 
-export default app;
+app.listen(8080);
+
