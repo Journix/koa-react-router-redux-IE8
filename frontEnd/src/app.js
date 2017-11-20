@@ -8,6 +8,7 @@ import { Router, Route, Link, hashHistory, browserHistory, IndexRoute} from 'rea
 import store from './stores'
 
 import Calendar from 'rc-calendar';
+import 'rc-calendar/dist/rc-calendar.css';
 
 const App = React.createClass({
   render() {
