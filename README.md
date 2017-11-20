@@ -9,6 +9,7 @@ ps：详细目录结构及启动命令直接拉到最后
 ## package.json npm 兼容模块
 - es3ify-loader: 解决 es3 环境下的兼容，有了这个， transform-es3-property-literals, transform-es3-member-expression-literal, add-module-exports就没有必要了
 - es3ify-webpack-plugin
+- es5-shim: IE8是es3,需要引入 es5 polyfill
 - babel-polyfill: 解决各类api
 - core-js: 解决 object.assign 等
 - transform-runtime
