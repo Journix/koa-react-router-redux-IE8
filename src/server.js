@@ -10,7 +10,6 @@ import koaMount from 'koa-mount';
 import router from './router';
 import finalhttp from './middlewares/finalhttp';
 
-
 let defaultPort = 8080;
 
 const app = new Koa();
@@ -41,4 +40,6 @@ app
 app.listen(defaultPort);
 
 console.log("linsen port" + defaultPort)
+
+export default app;
 

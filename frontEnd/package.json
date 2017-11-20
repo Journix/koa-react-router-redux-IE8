@@ -33,6 +33,7 @@
     "lodash": "^4.17.4",
     "normalize.css": "^4.0.0",
     "query-string": "^4.3.4",
+    "rc-calendar": "^9.3.0",
     "react": "0.14.9",
     "react-dom": "0.14.9",
     "react-infinite-scroller": "^1.0.15",

@@ -30,8 +30,8 @@
       "nodemon": "^1.11.0"
     },
     "scripts": {
-      "start": "babel-node ./src/server.js",
-      "debug": "node --inspect --debug ./src/server.js",
+      "start": "babel-node ./bin/run.js",
+      "debug": "node --inspect --debug ./bin/run.js",
       "build": "babel src -d prod --source-maps",
       "build:static": "cd static && npm run dist",
       "watch:addstatic": "concurrently \"npm run build:static\" \"npm run debug\"",

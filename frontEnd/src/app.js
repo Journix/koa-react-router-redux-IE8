@@ -7,6 +7,8 @@ import { Router, Route, Link, hashHistory, browserHistory, IndexRoute} from 'rea
 
 import store from './stores'
 
+import Calendar from 'rc-calendar';
+
 const App = React.createClass({
   render() {
     return (
@@ -24,7 +26,10 @@ const App = React.createClass({
 
 const About = React.createClass({
   render() {
-    return <h3>About</h3>
+    return <div>
+      <h3>About</h3>
+      <Calendar/>
+    </div>
   }
 })
 
@@ -48,7 +53,6 @@ const Message = React.createClass({
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={App}/>
       <Route path="about" component={About} />
       <Route path="inbox" component={Inbox}>
         <Route path="messages/:id" component={Message} />
