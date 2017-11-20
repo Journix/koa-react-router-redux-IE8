@@ -6,7 +6,7 @@ ps：详细目录结构及启动命令直接拉到最后
 - react : 只能选择0.14 版本，这里为了更好的兼容性， 选择了 0.14.9，相对应的 react-dom 同样选择 0.14.9
 - react-router : v4只能兼容 react 15 及以上的版本，我们这里是新项目，所以选择稳定性最高的 v3，这里路由不要选择版本过于低的版本
 
-## npm 兼容模块
+## package.json npm 兼容模块
 - es3ify-loader: 解决 es3 环境下的兼容，有了这个， transform-es3-property-literals, transform-es3-member-expression-literal, add-module-exports就没有必要了
 - es3ify-webpack-plugin
 - babel-polyfill: 解决各类api
@@ -19,7 +19,7 @@ ps：详细目录结构及启动命令直接拉到最后
 - babel-plugin-add-module-exports
 - babel-plugin-transform-es3-member-expression-literals
 - babel-plugin-transform-es3-property-literals
-- babel-plugin-transform-runtime
+- babel-plugin-transform-runtime: 供编译模块复用工具函数，减小编译后代码的体积。
 - babel-preset-env
 - babel-preset-es2015
 - babel-preset-es2015-loose
@@ -121,3 +121,10 @@ webpack.config.js
 - https://github.com/xcatliu/react-ie8
 - http://blog.csdn.net/deng_gene/article/details/53004735
 - https://github.com/xcatliu/react-ie8/issues/22
+
+
+## node层
+
+### package.json
+- babel-cli: 命令行转码，自带babel-node，提供一个支持ES6的REPL环境。可以直接运行 es6 脚本。
+- babel-register: 改写 require 名字，require时，先进行 babel 转码。由于是实时转码，只适合在开发环境中使用。
