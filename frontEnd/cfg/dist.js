@@ -8,6 +8,7 @@ let baseConfig = require('./base');
 
 // Add needed plugins here
 let es3ifyPlugin = require('es3ify-webpack-plugin');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let config = merge(baseConfig, {
   entry: path.join(__dirname, '../src/index.js'),
@@ -34,8 +35,13 @@ let config = merge(baseConfig, {
   }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
-    new es3ifyPlugin()
+    new es3ifyPlugin(),
     // new webpack.NoErrorsPlugin()
+    new HtmlWebpackPlugin({
+        title: 'spa demo',
+        filename: 'index.html',
+        template: path.join(__dirname, '../index-template.html')
+    })
   ]
 });
 
