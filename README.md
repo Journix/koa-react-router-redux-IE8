@@ -108,7 +108,10 @@ webpack.config.js
 
 确保IE以当前浏览器的最高模式渲染页面
 
-### 目录结构
+### 解决node_modules中的代码兼容性问题，兼容ie8需要把node_modules中的代码同样打包
+解决方案： 引入插件 `es3ify-webpack-plugin`
+
+## 目录结构
 - frontEnd : 前端react项目
   - cfg: 各环境配置
   - dist: 编译后的文件目录
@@ -122,6 +125,7 @@ webpack.config.js
 - https://github.com/xcatliu/react-ie8
 - http://blog.csdn.net/deng_gene/article/details/53004735
 - https://github.com/xcatliu/react-ie8/issues/22
+- https://segmentfault.com/q/1010000005889716/a-1020000009508746
 
 
 ## node层

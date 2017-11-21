@@ -7,8 +7,10 @@ import { Router, Route, Link, hashHistory, browserHistory, IndexRoute} from 'rea
 
 import store from './stores'
 
-import Calendar from 'rc-calendar';
-import 'rc-calendar/dist/rc-calendar.css';
+// let Calendar = require('rc-calendar');
+
+// import Calendar from 'rc-calendar';
+// import 'rc-calendar/dist/rc-calendar.css';
 
 const App = React.createClass({
   render() {
@@ -25,11 +27,18 @@ const App = React.createClass({
   }
 })
 
+// const About = React.createClass({
+//   render() {
+//     return <div>
+//       <h3>About</h3>
+//       <Calendar/>
+//     </div>
+//   }
+// })
 const About = React.createClass({
   render() {
     return <div>
       <h3>About</h3>
-      <Calendar/>
     </div>
   }
 })
