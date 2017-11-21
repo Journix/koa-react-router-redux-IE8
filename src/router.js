@@ -10,7 +10,6 @@ import demo from './ctrls/demo'
 const router = new Router();
 
 router.get('/slbhealthcheck.html', slbHealthCheckCtrl);
-// router.get('/:aaa', index)
 router.get('/:param', demo)
 
 //处理路由参数，自动加载或者校验

@@ -19,20 +19,20 @@ let config = merge(baseConfig, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-          properties: false,
-          warnings: false
-      },
-      output: {
-          beautify: true,
-          quote_keys: true
-      },
-      mangle: {
-          screw_ie8: false
-      },
-      // sourceMap: false
-  }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //       properties: false,
+    //       warnings: false
+    //   },
+    //   output: {
+    //       beautify: true,
+    //       quote_keys: true
+    //   },
+    //   mangle: {
+    //       screw_ie8: false
+    //   },
+    //   // sourceMap: false
+    // }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
     new es3ifyPlugin(),
