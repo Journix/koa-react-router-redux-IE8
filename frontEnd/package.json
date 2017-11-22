@@ -12,7 +12,6 @@
     "test": "karma start",
     "test:watch": "karma start --autoWatch=true --singleRun=false",
     "lint": "eslint ./src",
-    "start:server-render": "npm run build && node server.render.bundle.js",
     "build:server": "webpack --env=render",
     "build": "npm run dist && npm run build:server"
   },

@@ -9,9 +9,10 @@ import demo from './ctrls/demo'
 
 const router = new Router();
 
+router.get('/', demo)
 router.get('/slbhealthcheck.html', slbHealthCheckCtrl);
-// router.get('/', demo)
 router.get('/:param', demo)
+router.get('/*', demo)
 
 //处理路由参数，自动加载或者校验
 // router.param('serviceName', async function (param, ctx, next) {

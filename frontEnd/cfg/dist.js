@@ -15,7 +15,7 @@ let config = merge(baseConfig, {
   cache: false,
   devtool: 'sourcemap',
   plugins: [
-    new webpack.optimize.DedupePlugin(),
+    // new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
     }),
@@ -33,8 +33,8 @@ let config = merge(baseConfig, {
     //   },
     //   // sourceMap: false
     // }),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.AggressiveMergingPlugin(),
+    // new webpack.optimize.OccurenceOrderPlugin(),
+    // new webpack.optimize.AggressiveMergingPlugin(),
     new es3ifyPlugin(),
     // new webpack.NoErrorsPlugin()
     new HtmlWebpackPlugin({
