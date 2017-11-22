@@ -26,7 +26,7 @@ app.use(views(path.join(`${__dirname}`, '..', '/views'), {
 app.use(convert(session(app)));
 
 //直接通过***.html访问的页面
-app.use(mount(serve(path.join(`${__dirname}`, '..', '/static/dist'),  {gzip: true, autogz: true})));
+app.use(mount(serve(path.join(`${__dirname}`, '..', '/frontEnd/dist'),  {gzip: true, autogz: true})));
 
 app
 .use(router.routes())
@@ -39,7 +39,7 @@ app
 
 app.listen(defaultPort);
 
-console.log("linsen port" + defaultPort)
+console.log("linsen port:" + defaultPort)
 
 export default app;
 

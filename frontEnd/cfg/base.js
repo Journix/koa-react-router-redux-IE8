@@ -14,16 +14,16 @@ module.exports = {
   debug: true,
   devtool: 'eval',
   output: {
-    path: path.join(__dirname, '/../dist/assets'),
+    path: path.join(__dirname, '/../dist'),
     filename: 'app.js',
-    publicPath: '/assets/'
+    publicPath: '/'
   },
   devServer: {
     contentBase: './src/',
     historyApiFallback: true,   //"start": "webpack-dev-server --inline --content-base . --history-api-fallback"
     hot: true,
     port: 8000,
-    publicPath: '/assets/',
+    publicPath: '/',
     noInfo: false,
     stats: 'errors-only',
     // proxy: 'http://localhost:4444',
