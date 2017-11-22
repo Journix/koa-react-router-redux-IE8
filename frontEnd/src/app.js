@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import { Provider } from 'react-redux';
-import { Router, Route, Link, hashHistory, browserHistory, IndexRoute} from 'react-router';
+import { Router, Route, Link, hashHistory, browserHistory, IndexRoute, withRouter} from 'react-router';
 
 import store from './stores'
 
-import Calendar from 'rc-calendar';
-import 'rc-calendar/dist/rc-calendar.css';
+import About from './pages/about'
+
+import ErrorPage from './pages/errorPage'
+
 
 const App = React.createClass({
   render() {
@@ -22,15 +24,6 @@ const App = React.createClass({
         {this.props.children}
       </div>
     )
-  }
-})
-
-const About = React.createClass({
-  render() {
-    return <div>
-      <h3>About</h3>
-      <Calendar/>
-    </div>
   }
 })
 
@@ -59,5 +52,6 @@ ReactDOM.render((
         <Route path="messages/:id" component={Message} />
       </Route>
     </Route>
+    <Route path="*" component={withRouter(ErrorPage)}/>
   </Router>
 ), document.getElementById('app'))
