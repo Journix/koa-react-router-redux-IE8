@@ -36,7 +36,8 @@ ps: 目前引入的模块较多，可根据需要删减
 
 ### forEach 无法识别
 .babelrc
-`{
+```javascript
+{
   "presets": [
     [
       "es2015",
@@ -60,10 +61,12 @@ ps: 目前引入的模块较多，可根据需要删减
     "transform-es3-property-literals",
     "transform-es3-member-expression-literals"
   ]
-}`
+}
+```
 
 webpack.config.js
-`module: {
+```javascript
+module: {
     loaders: [{
       test: /\.(js|jsx)$/,
       loader: 'babel-loader',
@@ -99,7 +102,8 @@ webpack.config.js
         ]
       }
     ]
-  }`
+  }
+  ```
 
 更改入口文件位置，在入口文件（这里是index.js）中不写react代码，新增另一个文件（这里为app.js），把原来的入口文件代码写入（各种兼容保留在index.js中），最后引入新增的文件
 
