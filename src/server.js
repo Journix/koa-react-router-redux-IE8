@@ -10,7 +10,7 @@ import koaMount from 'koa-mount';
 import router from './router';
 import finalhttp from './middlewares/finalhttp';
 
-let defaultPort = 8080;
+let defaultPort = 8888;
 
 const app = new Koa();
 const mount = (middleware) => koaMount('/', middleware)

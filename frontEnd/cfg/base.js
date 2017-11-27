@@ -26,10 +26,9 @@ module.exports = {
     publicPath: '/',
     noInfo: false,
     stats: 'errors-only',
-    // proxy: 'http://localhost:4444',
     proxy: {
       '/api/**': {
-        target: 'http://localhost:4444',
+        target: 'http://localhost:8888',
         changeOrigin: true,
         secure: false
       }
