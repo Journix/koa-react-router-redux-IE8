@@ -1,13 +1,16 @@
 import React from 'react';
 
-import * as fetchApi from '../fetch'
+import {fetchApi} from '../fetch'
 
 import Calendar from 'rc-calendar';
 import 'rc-calendar/dist/rc-calendar.css';
 
 const About = React.createClass({
   componentWillMount() {
-    fetchApi.fetchData('getData')
+    fetchApi('getData',null,'GET',(resp)=>{
+      console.log(resp.statusText);
+      alert(resp.statusText)
+    })
     // .then((json) => {
     //    console.log(json)
     // });
